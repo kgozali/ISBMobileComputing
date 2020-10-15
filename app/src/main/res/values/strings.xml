@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">ISBMobileComputing</string>
-    <string name="text_cancel">Cancel</string>
+    <string name="text_back">Go Back</string>
+    <string name="Bevan">Sign In</string> 
+    <string name="username">USERNAME</string> 
+    <string name="log_in">Log In</string> 
+    <string name="Terms">By signing to Jasa Tampol Online you agree to our terms and conditions</string> 
+    <string name="password">PASSWORD</string> 
+    <string name="go_back">Go Back</string> 
+    <string name="Sign_up">New to JTO ? Sign Up now.</string>
+    <string name="forgot_pass">Forgot your password ?</string>
+    <string name="toast_click">Saya ter klik %1$s %2$s</string>
+    <string name="template_username_home">Welcome, %1$s</string>
+
 </resources>
