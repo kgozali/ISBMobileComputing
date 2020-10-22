@@ -8,14 +8,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class HomeActivity : AppCompatActivity() {
     private var username: String? = null
     private var password: String? = null
+    private val applicationData = ApplicationData(this@HomeActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        username = intent.getStringExtra("Username")
-
-        tvUsername.text = getString(R.string.template_username_home, username)
+        tvUsername.text = getString(R.string.template_username_home, applicationData.username)
 
         tvGoBack.setOnClickListener {
             this.onBackPressed()
@@ -25,6 +24,8 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, DetailActivity::class.java)
             startActivity(intent)
             this.finish()
+
+            applicationData.username = "tes"
         }
     }
 

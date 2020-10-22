@@ -23,6 +23,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (ApplicationData.isLogin) navigateToHomeActivity()
+    }
+
     private fun onButtonClick() {
         if (etUsername.text.isNotBlank() && etPassword.text.isNotBlank()) {
             navigateToHomeActivity()
@@ -32,8 +37,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigateToHomeActivity() {
-        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-        intent.putExtra(USERNAME_TAG, etUsername.text.toString())
-        startActivity(intent)
+        if (ApplicationData.isLogin) {
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            startActivity(intent)
+        } else {
+            ApplicationData.username = etUsername.text.toString()
+            ApplicationData.isLogin = true
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
