@@ -1,32 +1,34 @@
 package com.isbmobilecomputing.android
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : AppCompatActivity() {
     private var username: String? = null
     private var password: String? = null
-    private val applicationData = ApplicationData(this@HomeActivity)
+
+    lateinit var viewPagerAdapter: ViewPagerAdapter
+
+    val listNames: List<String> = listOf("Bevan", "Jessica", "Ammar")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvUsername.text = getString(R.string.template_username_home, applicationData.username)
+        viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, this.lifecycle)
 
-        tvGoBack.setOnClickListener {
-            this.onBackPressed()
+        listNames.map {
+            viewPagerAdapter.addFragment(Fragment1.init(it))
         }
 
-        tvFinish.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
-            this.finish()
+        viewPager2.adapter = viewPagerAdapter
+        viewPager2.offscreenPageLimit = 3
 
-            applicationData.username = "tes"
-        }
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+            tab.text = listNames[position]
+        }.attach()
     }
 
     companion object {

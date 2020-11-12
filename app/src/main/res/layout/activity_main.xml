@@ -6,41 +6,20 @@
     android:background="@color/gray"
     android:orientation="vertical">
 
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:background="@drawable/bg_imageview_border"/>
-
-    <TextView
-        android:id="@+id/tvUsername"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:textColor="@color/purple_200" />
+        style=""/>
 
-    <TextView
-        android:id="@+id/tvGoBack"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_back"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:textColor="@color/purple_200" />
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tvFinish"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_gravity="top|center_horizontal"
-        android:text="Finish"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:textColor="@color/purple_200" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
