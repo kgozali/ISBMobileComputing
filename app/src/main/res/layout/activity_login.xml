@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/my_color_gray"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="137dp"
@@ -127,18 +128,17 @@
         app:layout_constraintVertical_bias="0.418" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="150dp"
         android:layout_height="43dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="376dp"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/log_in"
         android:textColor="#FFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/etUsername"
         android:hint="@string/username"
         android:layout_width="382dp"
         android:layout_height="40dp"
@@ -152,7 +152,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/etPassword"
         android:layout_width="382dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"

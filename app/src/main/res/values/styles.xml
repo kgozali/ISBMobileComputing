@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/bg_imageview_border</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/button_drawable_state</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextViewStyle.Bold" parent="TextViewStyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TabLayout">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
