@@ -37,10 +37,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigateToHomeActivity() {
+        val tes: String
+
         if (ApplicationData.isLogin) {
+            tes = "tes"
             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
             startActivity(intent)
         } else {
+            tes = "tes2"
             ApplicationData.username = etUsername.text.toString()
             ApplicationData.isLogin = true
             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
